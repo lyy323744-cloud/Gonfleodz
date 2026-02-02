@@ -1,50 +1,39 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>gonfleodz</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gonfleodz</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="fade">
   <h1>gonfleodz</h1>
-  <nav>
-    <a href="#product">المنتج</a>
-    <a href="#order">اطلب الآن</a>
-  </nav>
 </header>
 
 <section class="hero fade">
-  <h2>أفضل منتج بأفضل سعر</h2>
+  <h2>أفضل منتجاتنا</h2>
   <p>جودة عالية – توصيل سريع – طلب سهل</p>
-  <a href="#order" class="btn">اطلب الآن</a>
 </section>
 
-<section id="product" class="product fade">
-  <!-- هنا ضع اسم الصورة التي رفعتها -->
-  <img src="product.jpg" alt="منتج">
-  <div>
-    <h3>اسم المنتج</h3>
-    <p>وصف مختصر وجذاب للمنتج.</p>
-    <p class="price">السعر: <span id="price">3000</span> دج</p>
-  </div>
+<section id="products" class="fade">
+  <h3>منتجاتنا</h3>
+  <!-- كل صورة ترفعها هنا ستظهر -->
+  <img src="product1.jpg" alt="منتج 1">
+  <img src="product2.jpg" alt="منتج 2">
+  <img src="product3.jpg" alt="منتج 3">
 </section>
 
-<section id="order" class="order fade">
-  <h2>معلومات الطلب</h2>
-
+<section id="order" class="fade">
+  <h3>اطلب الآن</h3>
   <form id="orderForm">
     <input type="text" id="fname" placeholder="الاسم" required>
     <input type="text" id="lname" placeholder="اللقب" required>
     <input type="tel" id="phone" placeholder="رقم الهاتف" required>
     <input type="text" id="state" placeholder="الولاية" required>
-
-    <input type="number" id="qty" min="1" value="1" required>
-
+    <input type="number" id="qty" placeholder="الكمية" min="1" value="1" required>
     <p>السعر الإجمالي: <strong><span id="total">3000</span> دج</strong></p>
-
     <button type="submit" class="btn glow">تأكيد الطلب</button>
   </form>
 </section>
