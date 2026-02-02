@@ -22,26 +22,28 @@ h1, h2, h3 {
   to { opacity: 1; }
 }
 
-/* Carousel */
+/* Carousel أفقي */
 .carousel {
-  overflow: hidden;
-  width: 90%;
-  margin: 20px auto;
-  cursor: grab;
+  display: flex;
+  overflow-x: auto; /* السحب يمين/يسار */
+  -webkit-overflow-scrolling: touch; /* سلاسة على الهواتف */
+  padding: 10px 0;
 }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
+.carousel::-webkit-scrollbar {
+  display: none; /* إخفاء شريط التمرير */
 }
 
 .carousel-item {
-  min-width: 100%;
-  box-sizing: border-box;
+  flex: 0 0 auto; /* كل عنصر بعرضه الطبيعي */
+  width: 200px; /* عرض كل صورة */
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
 .carousel-item img {
   width: 100%;
+  display: block;
   border-radius: 10px;
 }
 
