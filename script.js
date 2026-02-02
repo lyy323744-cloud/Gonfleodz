@@ -1,43 +1,55 @@
-// Fade in on scroll
-const fades = document.querySelectorAll(".fade");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
+// Fade-in عند التحميل
+window.addEventListener('load', () => {
+  document.querySelectorAll('.fade').forEach(el => el.style.opacity = 1);
 });
 
-fades.forEach(f => observer.observe(f));
+// تحديث السعر حسب الكمية
+const qty = document.getElementById('qty');
+const total = document.getElementById('total');
+const pricePerItem = 3000;
 
-// السعر
-const basePrice = 3000;
-const qty = document.getElementById("qty");
-const total = document.getElementById("total");
-const price = document.getElementById("price");
-
-qty.addEventListener("input", () => {
-  let q = qty.value;
-  let newPrice = basePrice * q;
-  total.textContent = newPrice;
+qty.addEventListener('input', () => {
+  let q = parseInt(qty.value) || 1;
+  total.textContent = pricePerItem * q;
 });
 
-// إرسال الطلب عبر واتساب
-document.getElementById("orderForm").addEventListener("submit", function(e){
+// زر الطلب
+const form = document.getElementById('orderForm');
+form.addEventListener('submit', e => {
   e.preventDefault();
+  alert('تم إرسال طلبك بنجاح!');
+});
 
-  let msg =
-`طلب جديد 🛒
-الاسم: ${fname.value}
-اللقب: ${lname.value}
-الهاتف: ${phone.value}
-الولاية: ${state.value}
-الكمية: ${qty.value}
-السعر: ${total.textContent} دج`;
+// Carousel بالسحب يمين/يسار
+const track = document.querySelector('.carousel-track');
+let isDown = false, startX, scrollLeft;
 
-  window.open(
-    `https://wa.me/213XXXXXXXXX?text=${encodeURIComponent(msg)}`,
-    "_blank"
-  );
+track.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - track.offsetLeft;
+  scrollLeft = track.scrollLeft;
+});
+
+track.addEventListener('mouseleave', () => isDown = false);
+track.addEventListener('mouseup', () => isDown = false);
+track.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - track.offsetLeft;
+  const walk = (x - startX) * 1;
+  track.scrollLeft = scrollLeft - walk;
+});
+
+// للسحب باللمس (للتابلت والهاتف)
+track.addEventListener('touchstart', e => {
+  isDown = true;
+  startX = e.touches[0].pageX - track.offsetLeft;
+  scrollLeft = track.scrollLeft;
+});
+track.addEventListener('touchend', () => isDown = false);
+track.addEventListener('touchmove', e => {
+  if(!isDown) return;
+  const x = e.touches[0].pageX - track.offsetLeft;
+  const walk = (x - startX) * 1;
+  track.scrollLeft = scrollLeft - walk;
 });
