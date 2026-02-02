@@ -1,111 +1,68 @@
-* {
-  box-sizing: border-box;
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f0f8ff;
+  color: #333;
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  direction: rtl;
-  background: #ffffff;
-  color: #0a2540;
+h1, h2, h3 {
+  color: #003366;
+  margin-top: 20px;
 }
 
-header {
+.fade {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Carousel */
+.carousel {
+  overflow: hidden;
+  width: 90%;
+  margin: 20px auto;
+  cursor: grab;
+}
+
+.carousel-track {
   display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-  background: #f5faff;
-  position: sticky;
-  top: 0;
+  transition: transform 0.5s ease;
 }
 
-header h1 {
-  color: #1e88e5;
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
 }
 
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #0a2540;
-}
-
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to bottom, #ffffff, #eef6ff);
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 30px;
-  background: #1e88e5;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-.glow:active {
-  box-shadow: 0 0 20px #1e88e5;
-}
-
-.product {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 40px;
-  align-items: center;
-}
-
-.product img {
-  max-width: 300px;
-  border-radius: 12px;
-}
-
-.order {
-  padding: 40px;
-  background: #f5faff;
-}
-
-form {
-  max-width: 400px;
-  margin: auto;
-}
-
-form input {
+.carousel-item img {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
+}
+
+/* زر الطلب */
+input, button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+  border-radius: 5px;
   border: 1px solid #ccc;
 }
 
-form button {
-  width: 100%;
+button.btn.glow {
+  background: #003366;
+  color: #fff;
   border: none;
   cursor: pointer;
+  transition: box-shadow 0.3s;
 }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #eef6ff;
-}
-
-/* Fade In */
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.8s ease;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
+button.btn.glow:hover {
+  box-shadow: 0 0 10px #003366;
 }
