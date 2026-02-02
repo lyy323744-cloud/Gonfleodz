@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  background: #ffffff;
+  color: #0a2540;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #f5faff;
+  position: sticky;
+  top: 0;
+}
+
+header h1 {
+  color: #1e88e5;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0a2540;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #ffffff, #eef6ff);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 30px;
+  background: #1e88e5;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.glow:active {
+  box-shadow: 0 0 20px #1e88e5;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px;
+  align-items: center;
+}
+
+.product img {
+  max-width: 300px;
+  border-radius: 12px;
+}
+
+.order {
+  padding: 40px;
+  background: #f5faff;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #eef6ff;
+}
+
+/* Fade In */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
