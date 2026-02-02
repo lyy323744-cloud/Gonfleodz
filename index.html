@@ -2,50 +2,41 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>gonfleodz</title>
+<title>sahla dz</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="fade">
-  <h1>gonfleodz</h1>
-</header>
+<h1 class="site-title">sahla dz</h1>
 
-<section class="hero fade">
-  <h2>أفضل منتجاتنا</h2>
-  <p>جودة عالية – توصيل سريع – طلب سهل</p>
-</section>
+<div class="products">
 
-<!-- قسم المنتجات -->
-<section id="products" class="fade">
-  <h2>منتجاتنا</h2>
-  <div class="carousel">
-    <div class="carousel-item"><img src="product1.jpgIMG_20260202_192227_411.jpg" alt="منتج 1"></div>
-    <div class="carousel-item"><img src="IMG_20260202_192227_263.jpg" alt="منتج 2"></div>
-    <div class="carousel-item"><img src="IMG_20260202_192227_455.jpg" alt="منتج 3"></div>
-    <div class="carousel-item"><img src="product4.jpg" alt="منتج 4"></div>
-    <!-- أضف المزيد بنفس الطريقة -->
+  <!-- المنتج الأول -->
+  <div class="product-card">
+    <img src="IMG_20260202_192227_411.jpg" alt="منتج 1">
+    <p class="price">1500 DA</p>
+    <button class="order-btn" onclick="goOrder('product1.jpg')">
+      اطلب الآن
+    </button>
   </div>
-</section>
 
-<section id="order" class="fade">
-  <h3>اطلب الآن</h3>
-  <form id="orderForm">
-    <input type="text" id="fname" placeholder="الاسم" required>
-    <input type="text" id="lname" placeholder="اللقب" required>
-    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
-    <input type="text" id="state" placeholder="الولاية" required>
-    <input type="number" id="qty" placeholder="الكمية" min="1" value="1" required>
-    <p>السعر الإجمالي: <strong><span id="total">3000</span> دج</strong></p>
-    <button type="submit" class="btn glow">تأكيد الطلب</button>
-  </form>
-</section>
+  <!-- المنتج الثاني -->
+  <div class="product-card">
+    <img src="IMG_20260202_223243_001.jpg" alt="منتج 2">
+    <p class="price">1200 DA</p>
+    <button class="order-btn" onclick="goOrder('product2.jpg')">
+      اطلب الآن
+    </button>
+  </div>
 
-<footer class="fade">
-  © 2026 gonfleodz – جميع الحقوق محفوظة
-</footer>
+</div>
 
-<script src="script.js"></script>
+<script>
+function goOrder(img){
+  localStorage.setItem("productImage", img);
+  window.location.href = "order.html";
+}
+</script>
+
 </body>
 </html>
