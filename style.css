@@ -1,70 +1,100 @@
-body {
+body{
   font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f0f8ff;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
+  background:#f2f8ff;
+  text-align:center;
+  margin:0;
+  padding:0;
 }
 
-h1, h2, h3 {
-  color: #003366;
-  margin-top: 20px;
+/* اسم الموقع */
+.site-title{
+  color:#1e88e5;
+  margin:20px;
 }
 
-.fade {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
+/* المنتجات */
+.products{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:40px;
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+/* كرت المنتج */
+.product-card{
+  border:2px solid #90caf9;
+  border-radius:15px;
+  padding:15px;
+  width:180px;
+  background:#fff;
 }
 
-/* Carousel أفقي */
-.carousel {
-  display: flex;
-  overflow-x: auto; /* السحب يمين/يسار */
-  -webkit-overflow-scrolling: touch; /* سلاسة على الهواتف */
-  padding: 10px 0;
+/* صورة المنتج */
+.product-card img{
+  width:100%;
+  border-radius:10px;
 }
 
-.carousel::-webkit-scrollbar {
-  display: none; /* إخفاء شريط التمرير */
+/* السعر */
+.price{
+  color:#1e88e5;
+  font-weight:bold;
+  margin:10px 0;
 }
 
-.carousel-item {
-  flex: 0 0 auto; /* كل عنصر بعرضه الطبيعي */
-  width: 200px; /* عرض كل صورة */
-  margin-right: 10px;
-  border-radius: 10px;
+/* زر اطلب الآن */
+.order-btn{
+  background:#fff;
+  color:#1e88e5;
+  border:2px solid #1e88e5;
+  border-radius:25px;
+  padding:10px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-.carousel-item img {
-  width: 100%;
-  display: block;
-  border-radius: 10px;
+.order-btn:active{
+  background:#1e88e5;
+  color:#fff;
 }
 
-/* زر الطلب */
-input, button {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
-  width: 200px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+/* صفحة الطلب */
+.order-title{
+  color:#1e88e5;
+  margin-top:20px;
 }
 
-button.btn.glow {
-  background: #003366;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: box-shadow 0.3s;
+/* صورة كبيرة */
+.big-img{
+  width:260px;
+  margin:20px auto;
+  display:block;
+  border-radius:15px;
 }
 
-button.btn.glow:hover {
-  box-shadow: 0 0 10px #003366;
+/* الفورم */
+.order-form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  width:260px;
+  margin:auto;
+}
+
+.order-form input,
+.order-form select{
+  padding:12px;
+  border-radius:25px;
+  border:2px solid #90caf9;
+  outline:none;
+}
+
+/* زر التأكيد */
+.confirm-btn{
+  background:#1e88e5;
+  color:#fff;
+  border:none;
+  padding:12px;
+  border-radius:25px;
+  cursor:pointer;
 }
